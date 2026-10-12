@@ -30,7 +30,7 @@
     .topbar { position: sticky; top: 0; z-index: 10; background: rgba(11,13,11,.88); backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
     nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
     .brand { display: flex; align-items: center; gap: 11px; font-weight: 850; letter-spacing: -.04em; }
-    .brand-mark { width: 37px; height: 37px; display: grid; place-items: center; background: var(--lime); color: #10130b; border-radius: 11px; font-weight: 950; font-size: 19px; }
+    .brand-mark { width: 48px; height: 48px; display: block; object-fit: contain; border-radius: 8px; background:#000; }
     .brand-name { font-size: 17px; line-height: 1.05; }
     .brand-name small { display: block; margin-top: 4px; color: var(--muted); font-size: 10px; letter-spacing: .18em; text-transform: uppercase; }
     .navlinks { display: flex; align-items: center; gap: 27px; color: #d5dbd1; font-size: 13px; }
@@ -71,6 +71,10 @@
     .art.four { background:linear-gradient(140deg,#f6c6a2,#a64d37); color:#32160f; }
     .art.five { background:linear-gradient(145deg,#eeeae2,#b9c4b6); color:#20271e; }
     .art.six { background:linear-gradient(140deg,#181818,#555); color:#f8f5ee; }
+    .portfolio-image { display:block; background:#080908; aspect-ratio:4/5; overflow:hidden; }
+    .portfolio-image img { width:100%; height:100%; object-fit:contain; transition:transform .35s ease; }
+    .work-card:hover .portfolio-image img { transform:scale(1.025); }
+    .wide-work .portfolio-image { aspect-ratio: 3/1; }
     .work-meta { padding:17px 18px 19px; display:flex; justify-content:space-between; align-items:center; gap:12px; }
     .work-meta h3 { margin:0; font-size:14px; letter-spacing:-.02em; }
     .work-meta p { margin:4px 0 0; color:var(--muted); font-size:11px; }
@@ -123,6 +127,7 @@
       .section-head { display:block; }
       .section-intro { margin-top:14px; }
       .work-grid { grid-template-columns:1fr; }
+      .wide-work .portfolio-image { aspect-ratio: 3/1; }
       .art { min-height:275px; }
       .service-grid { grid-template-columns:1fr; }
       .service { padding:21px; }
@@ -135,7 +140,7 @@
   <header class="topbar">
     <nav class="wrap" aria-label="Main navigation">
       <a class="brand" href="#home" aria-label="Rols Enterprise home">
-        <span class="brand-mark">R</span>
+        <img class="brand-mark" src="assets/rols-logo.png" alt="Rols Enterprise logo">
         <span class="brand-name">ROLS ENTERPRISE<small>Design · Print · Visuals</small></span>
       </a>
       <div class="navlinks">
@@ -168,35 +173,16 @@
       <div class="wrap">
         <div class="section-head">
           <div><div class="kicker">Selected work</div><h2>Designs that do the talking.</h2></div>
-          <p class="section-intro">A preview of the kind of visual work you can showcase here. Replace these sample cards with your own completed designs before sharing the website.</p>
+          <p class="section-intro">Selected promotional graphics and real-estate campaign designs created for business communication and property marketing.</p>
         </div>
-        <div class="work-grid">
-          <article class="work-card">
-            <div class="art one"><span class="mini-label">Campaign / 01</span><div class="big-type">Make<br>Some<br>Noise.</div><span class="small-type">Bold ideas for growing brands</span></div>
-            <div class="work-meta"><div><h3>Promotional Campaign</h3><p>Advertising & flyer design</p></div><span class="arrow">↗</span></div>
-          </article>
-          <article class="work-card">
-            <div class="art two"><span class="mini-label">Identity / 02</span><div class="big-type">Form<br>+ Function</div><span class="small-type">A considered visual identity</span></div>
-            <div class="work-meta"><div><h3>Brand Identity Concept</h3><p>Branding & visual systems</p></div><span class="arrow">↗</span></div>
-          </article>
-          <article class="work-card">
-            <div class="art three"><span class="mini-label">Culture / 03</span><div class="big-type">Create<br>Beyond.</div><span class="small-type">Ideas with a point of view</span></div>
-            <div class="work-meta"><div><h3>Creative Social Graphics</h3><p>Digital & social media design</p></div><span class="arrow">↗</span></div>
-          </article>
-          <article class="work-card">
-            <div class="art four"><span class="mini-label">Product / 04</span><div class="big-type">Made<br>To Be<br>Seen.</div><span class="small-type">Product stories, told visually</span></div>
-            <div class="work-meta"><div><h3>Product Advertisement</h3><p>Campaign & product visuals</p></div><span class="arrow">↗</span></div>
-          </article>
-          <article class="work-card">
-            <div class="art five"><span class="mini-label">Print / 05</span><div class="big-type">Print<br>With<br>Purpose.</div><span class="small-type">From screen to real life</span></div>
-            <div class="work-meta"><div><h3>Print Design</h3><p>Banners, posters & stationery</p></div><span class="arrow">↗</span></div>
-          </article>
-          <article class="work-card">
-            <div class="art six"><span class="mini-label">Editorial / 06</span><div class="big-type">Less.<br>But<br>Better.</div><span class="small-type">Clarity through design</span></div>
-            <div class="work-meta"><div><h3>Minimalist Design Concept</h3><p>Art direction & layout</p></div><span class="arrow">↗</span></div>
-          </article>
+        <div class="work-grid real-work-grid">
+          <article class="work-card"><a class="portfolio-image" href="assets/bulkwealth-make-your-move.jpg" target="_blank" rel="noopener"><img src="assets/bulkwealth-make-your-move.jpg" alt="BulkWealth Make Your Move This Month real estate promotional flyer" loading="lazy"></a><div class="work-meta"><div><h3>Make Your Move This Month</h3><p>Real estate promotional flyer</p></div><span class="arrow">↗</span></div></article>
+          <article class="work-card"><a class="portfolio-image" href="assets/rahama-estate.jpg" target="_blank" rel="noopener"><img src="assets/rahama-estate.jpg" alt="Rahama Estate property marketing flyer" loading="lazy"></a><div class="work-meta"><div><h3>Rahama Estate</h3><p>Property marketing campaign</p></div><span class="arrow">↗</span></div></article>
+          <article class="work-card"><a class="portfolio-image" href="assets/al-kalam-housing-estate.jpg" target="_blank" rel="noopener"><img src="assets/al-kalam-housing-estate.jpg" alt="Al-Kalam Housing Estate land sales flyer" loading="lazy"></a><div class="work-meta"><div><h3>Al-Kalam Housing Estate</h3><p>Land sales flyer design</p></div><span class="arrow">↗</span></div></article>
+          <article class="work-card"><a class="portfolio-image" href="assets/trusted-brand-property-ad.jpg" target="_blank" rel="noopener"><img src="assets/trusted-brand-property-ad.jpg" alt="Trusted Brand property services advertisement" loading="lazy"></a><div class="work-meta"><div><h3>Trusted Brand</h3><p>Property services advertisement</p></div><span class="arrow">↗</span></div></article>
+          <article class="work-card wide-work"><a class="portfolio-image" href="assets/bulkwealth-property-banner.jpg" target="_blank" rel="noopener"><img src="assets/bulkwealth-property-banner.jpg" alt="BulkWealth wide property services banner design" loading="lazy"></a><div class="work-meta"><div><h3>BulkWealth Property Banner</h3><p>Wide-format banner design</p></div><span class="arrow">↗</span></div></article>
         </div>
-        <p class="note">Portfolio note: these are original decorative sample layouts, not client projects. Replace them with your own designs to accurately represent your work.</p>
+        <p class="note">Tip: tap any project image to open a larger view.</p>
       </div>
     </section>
 
@@ -258,4 +244,5 @@
   </footer>
   <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
-</html>
+                                                                                                                                                        </html>
+                                                                                                                                                        
