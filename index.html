@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b0d0b">
+  <meta name="description" content="Rols Enterprise — graphic design, branding, promotional graphics and print design.">
+  <title>Rols Enterprise | Graphic Design & Visuals</title>
+  <style>
+    :root {
+      --bg: #0b0d0b;
+      --panel: #131613;
+      --panel-2: #1a1e1a;
+      --text: #f4f6f1;
+      --muted: #a6afa4;
+      --lime: #c7ff45;
+      --line: rgba(255,255,255,.12);
+      --max: 1160px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; background: var(--bg); color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .wrap { width: min(var(--max), calc(100% - 40px)); margin-inline: auto; }
+    .topbar { position: sticky; top: 0; z-index: 10; background: rgba(11,13,11,.88); backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
+    nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { display: flex; align-items: center; gap: 11px; font-weight: 850; letter-spacing: -.04em; }
+    .brand-mark { width: 37px; height: 37px; display: grid; place-items: center; background: var(--lime); color: #10130b; border-radius: 11px; font-weight: 950; font-size: 19px; }
+    .brand-name { font-size: 17px; line-height: 1.05; }
+    .brand-name small { display: block; margin-top: 4px; color: var(--muted); font-size: 10px; letter-spacing: .18em; text-transform: uppercase; }
+    .navlinks { display: flex; align-items: center; gap: 27px; color: #d5dbd1; font-size: 13px; }
+    .navlinks a:hover { color: var(--lime); }
+    .nav-cta, .button { display: inline-flex; align-items: center; justify-content: center; gap: 9px; border-radius: 999px; padding: 12px 18px; font-weight: 800; font-size: 13px; background: var(--lime); color: #11140b; transition: transform .2s ease, background .2s ease; }
+    .nav-cta:hover, .button:hover { transform: translateY(-2px); background: #d7ff7d; }
+    .button.secondary { background: transparent; color: var(--text); border: 1px solid var(--line); }
+    .button.secondary:hover { border-color: var(--lime); color: var(--lime); background: transparent; }
+    .hero { padding: 86px 0 74px; position: relative; overflow: hidden; }
+    .hero:before { content:""; position:absolute; width:560px; height:560px; right:-210px; top:-190px; background: radial-gradient(circle, rgba(199,255,69,.14), transparent 67%); pointer-events:none; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; border: 1px solid rgba(199,255,69,.35); border-radius: 999px; padding: 7px 12px; color: var(--lime); text-transform: uppercase; letter-spacing: .14em; font-size: 10px; font-weight: 850; }
+    .eyebrow:before { content:""; width:7px; height:7px; background:var(--lime); border-radius:50%; box-shadow: 0 0 14px var(--lime); }
+    h1 { max-width: 900px; margin: 25px 0 20px; font-size: clamp(44px, 7.4vw, 90px); line-height: .98; letter-spacing: -.075em; font-weight: 900; }
+    h1 span { color: var(--lime); }
+    .hero-copy { max-width: 600px; color: var(--muted); font-size: clamp(15px, 2vw, 18px); }
+    .hero-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top: 29px; }
+    .hero-bottom { margin-top: 70px; padding-top: 21px; border-top: 1px solid var(--line); display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; color:var(--muted); font-size:12px; }
+    .hero-bottom strong { color: var(--text); font-weight:750; }
+    section { padding: 75px 0; }
+    .section-head { display:flex; justify-content:space-between; align-items:end; gap:22px; margin-bottom: 28px; }
+    .kicker { color:var(--lime); text-transform:uppercase; letter-spacing:.16em; font-size:10px; font-weight:900; }
+    h2 { margin:8px 0 0; font-size:clamp(30px,4vw,48px); line-height:1.05; letter-spacing:-.06em; }
+    .section-intro { max-width:430px; color:var(--muted); font-size:14px; margin:0; }
+    .work-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+    .work-card { overflow:hidden; border:1px solid var(--line); background:var(--panel); border-radius:17px; transition:transform .25s ease, border-color .25s ease; }
+    .work-card:hover { transform:translateY(-5px); border-color:rgba(199,255,69,.5); }
+    .art { min-height:255px; position:relative; overflow:hidden; display:flex; align-items:center; justify-content:center; padding:22px; isolation:isolate; }
+    .art:before { content:""; position:absolute; inset:12px; border:1px solid rgba(255,255,255,.22); z-index:-1; }
+    .art .mini-label { position:absolute; top:24px; left:26px; font-size:9px; letter-spacing:.18em; text-transform:uppercase; font-weight:900; }
+    .art .big-type { font-size:clamp(31px,4vw,52px); font-weight:1000; line-height:.83; letter-spacing:-.09em; text-align:center; text-transform:uppercase; }
+    .art .small-type { position:absolute; bottom:24px; left:26px; right:26px; font-size:10px; letter-spacing:.12em; text-transform:uppercase; }
+    .art.one { background:linear-gradient(140deg,#c7ff45 0%,#91bd23 55%,#27340e 100%); color:#11150a; }
+    .art.one:after { content:""; position:absolute; width:160px;height:160px;border:28px solid rgba(10,15,5,.15);border-radius:50%;right:-35px;bottom:-50px;z-index:-1; }
+    .art.two { background:linear-gradient(145deg,#e9dfd0,#b9a48b); color:#211b16; }
+    .art.two .big-type { font-family:Georgia,serif; font-weight:700; letter-spacing:-.06em; }
+    .art.three { background:linear-gradient(135deg,#171b34,#4c4e87); color:#fff; }
+    .art.three .big-type { font-style:italic; }
+    .art.four { background:linear-gradient(140deg,#f6c6a2,#a64d37); color:#32160f; }
+    .art.five { background:linear-gradient(145deg,#eeeae2,#b9c4b6); color:#20271e; }
+    .art.six { background:linear-gradient(140deg,#181818,#555); color:#f8f5ee; }
+    .work-meta { padding:17px 18px 19px; display:flex; justify-content:space-between; align-items:center; gap:12px; }
+    .work-meta h3 { margin:0; font-size:14px; letter-spacing:-.02em; }
+    .work-meta p { margin:4px 0 0; color:var(--muted); font-size:11px; }
+    .arrow { color:var(--lime); font-size:20px; }
+    .note { margin-top:18px; color:var(--muted); font-size:12px; }
+    .services { background:#101310; border-block:1px solid var(--line); }
+    .service-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:13px; }
+    .service { padding:24px; background:var(--panel); border:1px solid var(--line); border-radius:15px; }
+    .service-num { color:var(--lime); font-size:11px; font-weight:900; letter-spacing:.15em; }
+    .service h3 { margin:22px 0 8px; font-size:19px; letter-spacing:-.04em; }
+    .service p { margin:0; color:var(--muted); font-size:13px; }
+    .about-grid { display:grid; grid-template-columns:.8fr 1.2fr; gap:60px; align-items:start; }
+    .about-card { padding:30px; border:1px solid var(--line); border-radius:18px; background:linear-gradient(145deg,#191d18,#101210); min-height:260px; display:flex; flex-direction:column; justify-content:space-between; }
+    .about-monogram { font-size:90px; line-height:1; font-weight:1000; letter-spacing:-.1em; color:var(--lime); }
+    .about-card p { margin:24px 0 0; color:var(--muted); font-size:13px; }
+    .about-copy p { color:var(--muted); font-size:15px; }
+    .pill-list { display:flex; flex-wrap:wrap; gap:8px; margin-top:22px; }
+    .pill { padding:8px 12px; border:1px solid var(--line); border-radius:999px; color:#dce1d8; font-size:11px; }
+    .contact { padding-bottom:88px; }
+    .contact-box { padding:clamp(28px,5vw,58px); border-radius:22px; background:var(--lime); color:#11150b; display:flex; justify-content:space-between; align-items:center; gap:28px; overflow:hidden; position:relative; }
+    .contact-box:after { content:"RE"; position:absolute; right:12%; top:-50%; font-size:clamp(130px,25vw,300px); font-weight:1000; letter-spacing:-.12em; color:rgba(17,21,11,.06); pointer-events:none; }
+    .contact-box h2 { max-width:650px; position:relative; z-index:1; }
+    .contact-box p { max-width:490px; color:rgba(17,21,11,.72); font-size:14px; position:relative; z-index:1; }
+    .contact-actions { display:flex; flex-direction:column; gap:10px; min-width:180px; position:relative; z-index:1; }
+    .contact-actions .button { background:#11150b; color:#f4f6f1; }
+    .contact-actions .button.secondary { border-color:rgba(17,21,11,.3); color:#11150b; background:transparent; }
+    footer { border-top:1px solid var(--line); padding:24px 0; color:var(--muted); font-size:11px; }
+    .footer-inner { display:flex; justify-content:space-between; align-items:center; gap:15px; flex-wrap:wrap; }
+    .footer-links { display:flex; gap:17px; }
+    .footer-links a:hover { color:var(--lime); }
+    @media (max-width: 800px) {
+      .navlinks { gap:14px; }
+      .navlinks a:not(.nav-cta) { display:none; }
+      .hero { padding-top:65px; }
+      .work-grid { grid-template-columns:repeat(2,1fr); }
+      .service-grid { grid-template-columns:repeat(2,1fr); }
+      .about-grid { grid-template-columns:1fr; gap:25px; }
+      .about-card { min-height:210px; }
+      .contact-box { align-items:flex-start; flex-direction:column; }
+      .contact-actions { flex-direction:row; flex-wrap:wrap; }
+    }
+    @media (max-width: 520px) {
+      .wrap { width:min(var(--max),calc(100% - 28px)); }
+      nav { min-height:67px; }
+      .brand-name { font-size:15px; }
+      .nav-cta { padding:10px 13px; font-size:11px; }
+      .hero { padding:55px 0 48px; }
+      .hero-bottom { margin-top:48px; }
+      section { padding:55px 0; }
+      .section-head { display:block; }
+      .section-intro { margin-top:14px; }
+      .work-grid { grid-template-columns:1fr; }
+      .art { min-height:275px; }
+      .service-grid { grid-template-columns:1fr; }
+      .service { padding:21px; }
+      .contact-actions { flex-direction:column; width:100%; }
+      .contact-actions .button { width:100%; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <nav class="wrap" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="Rols Enterprise home">
+        <span class="brand-mark">R</span>
+        <span class="brand-name">ROLS ENTERPRISE<small>Design · Print · Visuals</small></span>
+      </a>
+      <div class="navlinks">
+        <a href="#work">Portfolio</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a class="nav-cta" href="#contact">Start a project ↗</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="wrap">
+        <span class="eyebrow">Creative design studio</span>
+        <h1>Ideas made visible.<br><span>Brands made memorable.</span></h1>
+        <p class="hero-copy">Rols Enterprise creates bold, thoughtful visuals that help businesses communicate clearly, stand out, and connect with their audience.</p>
+        <div class="hero-actions">
+          <a class="button" href="#work">Explore our work <span aria-hidden="true">↘</span></a>
+          <a class="button secondary" href="#contact">Let's work together</a>
+        </div>
+        <div class="hero-bottom">
+          <span><strong>Creative thinking.</strong> Clear communication.</span>
+          <span>Graphic Design · Branding · Promotional Visuals</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="kicker">Selected work</div><h2>Designs that do the talking.</h2></div>
+          <p class="section-intro">A preview of the kind of visual work you can showcase here. Replace these sample cards with your own completed designs before sharing the website.</p>
+        </div>
+        <div class="work-grid">
+          <article class="work-card">
+            <div class="art one"><span class="mini-label">Campaign / 01</span><div class="big-type">Make<br>Some<br>Noise.</div><span class="small-type">Bold ideas for growing brands</span></div>
+            <div class="work-meta"><div><h3>Promotional Campaign</h3><p>Advertising & flyer design</p></div><span class="arrow">↗</span></div>
+          </article>
+          <article class="work-card">
+            <div class="art two"><span class="mini-label">Identity / 02</span><div class="big-type">Form<br>+ Function</div><span class="small-type">A considered visual identity</span></div>
+            <div class="work-meta"><div><h3>Brand Identity Concept</h3><p>Branding & visual systems</p></div><span class="arrow">↗</span></div>
+          </article>
+          <article class="work-card">
+            <div class="art three"><span class="mini-label">Culture / 03</span><div class="big-type">Create<br>Beyond.</div><span class="small-type">Ideas with a point of view</span></div>
+            <div class="work-meta"><div><h3>Creative Social Graphics</h3><p>Digital & social media design</p></div><span class="arrow">↗</span></div>
+          </article>
+          <article class="work-card">
+            <div class="art four"><span class="mini-label">Product / 04</span><div class="big-type">Made<br>To Be<br>Seen.</div><span class="small-type">Product stories, told visually</span></div>
+            <div class="work-meta"><div><h3>Product Advertisement</h3><p>Campaign & product visuals</p></div><span class="arrow">↗</span></div>
+          </article>
+          <article class="work-card">
+            <div class="art five"><span class="mini-label">Print / 05</span><div class="big-type">Print<br>With<br>Purpose.</div><span class="small-type">From screen to real life</span></div>
+            <div class="work-meta"><div><h3>Print Design</h3><p>Banners, posters & stationery</p></div><span class="arrow">↗</span></div>
+          </article>
+          <article class="work-card">
+            <div class="art six"><span class="mini-label">Editorial / 06</span><div class="big-type">Less.<br>But<br>Better.</div><span class="small-type">Clarity through design</span></div>
+            <div class="work-meta"><div><h3>Minimalist Design Concept</h3><p>Art direction & layout</p></div><span class="arrow">↗</span></div>
+          </article>
+        </div>
+        <p class="note">Portfolio note: these are original decorative sample layouts, not client projects. Replace them with your own designs to accurately represent your work.</p>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="kicker">What we do</div><h2>Creative services.</h2></div>
+          <p class="section-intro">Visual solutions for businesses, events, products, and people with something worth sharing.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service"><span class="service-num">01 / DESIGN</span><h3>Flyers & Promotional Graphics</h3><p>Attention-grabbing visuals for offers, campaigns, events, and announcements.</p></article>
+          <article class="service"><span class="service-num">02 / IDENTITY</span><h3>Logo & Brand Identity</h3><p>Distinctive visual identities that help businesses look consistent and recognizable.</p></article>
+          <article class="service"><span class="service-num">03 / DIGITAL</span><h3>Social Media Design</h3><p>Scroll-stopping graphics designed for digital platforms and brand communication.</p></article>
+          <article class="service"><span class="service-num">04 / PRINT</span><h3>Banners, Posters & Print</h3><p>Print-ready designs for business promotion, events, and everyday brand needs.</p></article>
+          <article class="service"><span class="service-num">05 / EVENTS</span><h3>Invitation Cards</h3><p>Elegant and memorable invitations for weddings, celebrations, and special occasions.</p></article>
+          <article class="service"><span class="service-num">06 / CAMPAIGNS</span><h3>Product Advertising</h3><p>Product-focused visuals that present your offer clearly and attractively.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap about-grid">
+        <div class="about-card">
+          <div class="about-monogram">RE.</div>
+          <div><div class="kicker">Rols Enterprise</div><p>Creative visuals. Thoughtful details. Stronger first impressions.</p></div>
+        </div>
+        <div class="about-copy">
+          <div class="kicker">About the studio</div>
+          <h2>Good design is more than looking good.</h2>
+          <p>At Rols Enterprise, the goal is to turn ideas into visuals that are clear, memorable, and fit for purpose. From promotional graphics to brand identity and print design, each project should help tell a story and make the right impression.</p>
+          <p>This portfolio is a growing collection of creative work. Add a short personal introduction here, your experience, and the design tools you use so potential clients can get to know you.</p>
+          <div class="pill-list"><span class="pill">Visual communication</span><span class="pill">Creative direction</span><span class="pill">Brand consistency</span><span class="pill">Print & digital</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="wrap">
+        <div class="contact-box">
+          <div>
+            <div class="kicker" style="color:#263313">Have a project in mind?</div>
+            <h2>Let's create something people remember.</h2>
+            <p>Tell us what you're working on, what you need designed, and when you need it. We'll get back to you to discuss the next steps.</p>
+          </div>
+          <div class="contact-actions">
+            <a class="button" href="https://wa.me/2347045151249" target="_blank" rel="noopener">Chat on WhatsApp ↗</a>
+            <a class="button secondary" href="https://www.instagram.com/rols_enterprise/" target="_blank" rel="noopener">Instagram ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <span>© <span id="year"></span> Rols Enterprise. Designed with purpose.</span>
+      <div class="footer-links"><a href="#home">Back to top ↑</a><a href="https://www.instagram.com/rols_enterprise/" target="_blank" rel="noopener">Instagram</a></div>
+    </div>
+  </footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
