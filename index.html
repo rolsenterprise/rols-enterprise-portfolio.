@@ -6,6 +6,11 @@
   <meta name="theme-color" content="#0b0d0b">
   <meta name="description" content="Rols Enterprise — graphic design, branding, promotional graphics and print design.">
   <title>Rols Enterprise | Graphic Design & Visuals</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --bg: #0b0d0b;
@@ -17,139 +22,475 @@
       --line: rgba(255,255,255,.12);
       --max: 1160px;
     }
+
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
+
     body {
-      margin: 0; background: var(--bg); color: var(--text);
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
       line-height: 1.6;
     }
+
+    h1, h2, h3, h4, h5, h6,
+    .brand, .button, .nav-cta {
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
     a { color: inherit; text-decoration: none; }
     img { max-width: 100%; display: block; }
-    .wrap { width: min(var(--max), calc(100% - 40px)); margin-inline: auto; }
-    .topbar { position: sticky; top: 0; z-index: 10; background: rgba(11,13,11,.88); backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
-    nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
-    .brand { display: flex; align-items: center; gap: 11px; font-weight: 850; letter-spacing: -.04em; }
-    .brand-mark { width: 48px; height: 48px; display: block; object-fit: contain; border-radius: 8px; background:#000; }
-    .brand-name { font-size: 17px; line-height: 1.05; }
-    .brand-name small { display: block; margin-top: 4px; color: var(--muted); font-size: 10px; letter-spacing: .18em; text-transform: uppercase; }
-    .navlinks { display: flex; align-items: center; gap: 27px; color: #d5dbd1; font-size: 13px; }
-    .navlinks a:hover { color: var(--lime); }
-    .nav-cta, .button { display: inline-flex; align-items: center; justify-content: center; gap: 9px; border-radius: 999px; padding: 12px 18px; font-weight: 800; font-size: 13px; background: var(--lime); color: #11140b; transition: transform .2s ease, background .2s ease; }
-    .nav-cta:hover, .button:hover { transform: translateY(-2px); background: #d7ff7d; }
-    .button.secondary { background: transparent; color: var(--text); border: 1px solid var(--line); }
-    .button.secondary:hover { border-color: var(--lime); color: var(--lime); background: transparent; }
-    .hero { padding: 86px 0 74px; position: relative; overflow: hidden; }
-    .hero:before { content:""; position:absolute; width:560px; height:560px; right:-210px; top:-190px; background: radial-gradient(circle, rgba(199,255,69,.14), transparent 67%); pointer-events:none; }
-    .eyebrow { display: inline-flex; align-items: center; gap: 9px; border: 1px solid rgba(199,255,69,.35); border-radius: 999px; padding: 7px 12px; color: var(--lime); text-transform: uppercase; letter-spacing: .14em; font-size: 10px; font-weight: 850; }
-    .eyebrow:before { content:""; width:7px; height:7px; background:var(--lime); border-radius:50%; box-shadow: 0 0 14px var(--lime); }
-    h1 { max-width: 900px; margin: 25px 0 20px; font-size: clamp(44px, 7.4vw, 90px); line-height: .98; letter-spacing: -.075em; font-weight: 900; }
-    h1 span { color: var(--lime); }
-    .hero-copy { max-width: 600px; color: var(--muted); font-size: clamp(15px, 2vw, 18px); }
-    .hero-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top: 29px; }
-    .hero-bottom { margin-top: 70px; padding-top: 21px; border-top: 1px solid var(--line); display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; color:var(--muted); font-size:12px; }
-    .hero-bottom strong { color: var(--text); font-weight:750; }
-    section { padding: 75px 0; }
-    .section-head { display:flex; justify-content:space-between; align-items:end; gap:22px; margin-bottom: 28px; }
-    .kicker { color:var(--lime); text-transform:uppercase; letter-spacing:.16em; font-size:10px; font-weight:900; }
-    h2 { margin:8px 0 0; font-size:clamp(30px,4vw,48px); line-height:1.05; letter-spacing:-.06em; }
-    .section-intro { max-width:430px; color:var(--muted); font-size:14px; margin:0; }
-    .work-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
-    .work-card { overflow:hidden; border:1px solid var(--line); background:var(--panel); border-radius:17px; transition:transform .25s ease, border-color .25s ease; }
-    .work-card:hover { transform:translateY(-5px); border-color:rgba(199,255,69,.5); }
-    .art { min-height:255px; position:relative; overflow:hidden; display:flex; align-items:center; justify-content:center; padding:22px; isolation:isolate; }
-    .art:before { content:""; position:absolute; inset:12px; border:1px solid rgba(255,255,255,.22); z-index:-1; }
-    .art .mini-label { position:absolute; top:24px; left:26px; font-size:9px; letter-spacing:.18em; text-transform:uppercase; font-weight:900; }
-    .art .big-type { font-size:clamp(31px,4vw,52px); font-weight:1000; line-height:.83; letter-spacing:-.09em; text-align:center; text-transform:uppercase; }
-    .art .small-type { position:absolute; bottom:24px; left:26px; right:26px; font-size:10px; letter-spacing:.12em; text-transform:uppercase; }
-    .art.one { background:linear-gradient(140deg,#c7ff45 0%,#91bd23 55%,#27340e 100%); color:#11150a; }
-    .art.one:after { content:""; position:absolute; width:160px;height:160px;border:28px solid rgba(10,15,5,.15);border-radius:50%;right:-35px;bottom:-50px;z-index:-1; }
-    .art.two { background:linear-gradient(145deg,#e9dfd0,#b9a48b); color:#211b16; }
-    .art.two .big-type { font-family:Georgia,serif; font-weight:700; letter-spacing:-.06em; }
-    .art.three { background:linear-gradient(135deg,#171b34,#4c4e87); color:#fff; }
-    .art.three .big-type { font-style:italic; }
-    .art.four { background:linear-gradient(140deg,#f6c6a2,#a64d37); color:#32160f; }
-    .art.five { background:linear-gradient(145deg,#eeeae2,#b9c4b6); color:#20271e; }
-    .art.six { background:linear-gradient(140deg,#181818,#555); color:#f8f5ee; }
-    .portfolio-image { display:block; background:#080908; aspect-ratio:4/5; overflow:hidden; }
-    .portfolio-image img { width:100%; height:100%; object-fit:contain; transition:transform .35s ease; }
-    .work-card:hover .portfolio-image img { transform:scale(1.025); }
-    .wide-work .portfolio-image { aspect-ratio: 3/1; }
-    .work-meta { padding:17px 18px 19px; display:flex; justify-content:space-between; align-items:center; gap:12px; }
-    .work-meta h3 { margin:0; font-size:14px; letter-spacing:-.02em; }
-    .work-meta p { margin:4px 0 0; color:var(--muted); font-size:11px; }
-    .arrow { color:var(--lime); font-size:20px; }
-    .note { margin-top:18px; color:var(--muted); font-size:12px; }
-    .services { background:#101310; border-block:1px solid var(--line); }
-    .service-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:13px; }
-    .service { padding:24px; background:var(--panel); border:1px solid var(--line); border-radius:15px; }
-    .service-num { color:var(--lime); font-size:11px; font-weight:900; letter-spacing:.15em; }
-    .service h3 { margin:22px 0 8px; font-size:19px; letter-spacing:-.04em; }
-    .service p { margin:0; color:var(--muted); font-size:13px; }
-    .about-grid { display:grid; grid-template-columns:.8fr 1.2fr; gap:60px; align-items:start; }
-    .about-card { padding:30px; border:1px solid var(--line); border-radius:18px; background:linear-gradient(145deg,#191d18,#101210); min-height:260px; display:flex; flex-direction:column; justify-content:space-between; }
-    .about-monogram { font-size:90px; line-height:1; font-weight:1000; letter-spacing:-.1em; color:var(--lime); }
-    .about-card p { margin:24px 0 0; color:var(--muted); font-size:13px; }
-    .about-copy p { color:var(--muted); font-size:15px; }
-    .pill-list { display:flex; flex-wrap:wrap; gap:8px; margin-top:22px; }
-    .pill { padding:8px 12px; border:1px solid var(--line); border-radius:999px; color:#dce1d8; font-size:11px; }
-    .contact { padding-bottom:88px; }
-    .contact-box { padding:clamp(28px,5vw,58px); border-radius:22px; background:var(--lime); color:#11150b; display:flex; justify-content:space-between; align-items:center; gap:28px; overflow:hidden; position:relative; }
-    .contact-box:after { content:"RE"; position:absolute; right:12%; top:-50%; font-size:clamp(130px,25vw,300px); font-weight:1000; letter-spacing:-.12em; color:rgba(17,21,11,.06); pointer-events:none; }
-    .contact-box h2 { max-width:650px; position:relative; z-index:1; }
-    .contact-box p { max-width:490px; color:rgba(17,21,11,.72); font-size:14px; position:relative; z-index:1; }
-    .contact-actions { display:flex; flex-direction:column; gap:10px; min-width:180px; position:relative; z-index:1; }
-    .contact-actions .button { background:#11150b; color:#f4f6f1; }
-    .contact-actions .button.secondary { border-color:rgba(17,21,11,.3); color:#11150b; background:transparent; }
-    footer { border-top:1px solid var(--line); padding:24px 0; color:var(--muted); font-size:11px; }
-    .footer-inner { display:flex; justify-content:space-between; align-items:center; gap:15px; flex-wrap:wrap; }
-    .footer-links { display:flex; gap:17px; }
-    .footer-links a:hover { color:var(--lime); }
-    @media (max-width: 800px) {
-      .navlinks { gap:14px; }
-      .navlinks a:not(.nav-cta) { display:none; }
-      .hero { padding-top:65px; }
-      .work-grid { grid-template-columns:repeat(2,1fr); }
-      .service-grid { grid-template-columns:repeat(2,1fr); }
-      .about-grid { grid-template-columns:1fr; gap:25px; }
-      .about-card { min-height:210px; }
-      .contact-box { align-items:flex-start; flex-direction:column; }
-      .contact-actions { flex-direction:row; flex-wrap:wrap; }
+
+    .wrap {
+      width: min(var(--max), calc(100% - 40px));
+      margin-inline: auto;
     }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(11,13,11,.88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      font-weight: 850;
+      letter-spacing: -.04em;
+    }
+
+    .brand-mark {
+      width: 48px;
+      height: 48px;
+      display: block;
+      object-fit: contain;
+      border-radius: 8px;
+      background: #000;
+    }
+
+    .brand-name { font-size: 17px; line-height: 1.05; }
+
+    .brand-name small {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    .navlinks {
+      display: flex;
+      align-items: center;
+      gap: 27px;
+      color: #d5dbd1;
+      font-size: 13px;
+    }
+
+    .navlinks a:hover { color: var(--lime); }
+
+    .nav-cta, .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      border-radius: 999px;
+      padding: 12px 18px;
+      font-weight: 800;
+      font-size: 13px;
+      background: var(--lime);
+      color: #11140b;
+      transition: transform .2s ease, background .2s ease;
+    }
+
+    .nav-cta:hover, .button:hover {
+      transform: translateY(-2px);
+      background: #d7ff7d;
+    }
+
+    .button.secondary {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--line);
+    }
+
+    .button.secondary:hover {
+      border-color: var(--lime);
+      color: var(--lime);
+      background: transparent;
+    }
+
+    .hero {
+      padding: 86px 0 74px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero:before {
+      content: "";
+      position: absolute;
+      width: 560px;
+      height: 560px;
+      right: -210px;
+      top: -190px;
+      background: radial-gradient(circle, rgba(199,255,69,.14), transparent 67%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      border: 1px solid rgba(199,255,69,.35);
+      border-radius: 999px;
+      padding: 7px 12px;
+      color: var(--lime);
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-size: 10px;
+      font-weight: 850;
+    }
+
+    .eyebrow:before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      background: var(--lime);
+      border-radius: 50%;
+      box-shadow: 0 0 14px var(--lime);
+    }
+
+    h1 {
+      max-width: 900px;
+      margin: 25px 0 20px;
+      font-size: clamp(44px, 7.4vw, 90px);
+      line-height: .98;
+      letter-spacing: -.075em;
+      font-weight: 900;
+    }
+
+    h1 span { color: var(--lime); }
+
+    .hero-copy {
+      max-width: 600px;
+      color: var(--muted);
+      font-size: clamp(15px, 2vw, 18px);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 29px;
+    }
+
+    .hero-bottom {
+      margin-top: 70px;
+      padding-top: 21px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .hero-bottom strong { color: var(--text); font-weight: 750; }
+
+    section { padding: 75px 0; }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 22px;
+      margin-bottom: 28px;
+    }
+
+    .kicker {
+      color: var(--lime);
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      font-size: 10px;
+      font-weight: 900;
+    }
+
+    h2 {
+      margin: 8px 0 0;
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1.05;
+      letter-spacing: -.06em;
+    }
+
+    .section-intro {
+      max-width: 430px;
+      color: var(--muted);
+      font-size: 14px;
+      margin: 0;
+    }
+
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .work-card {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      border-radius: 17px;
+      transition: transform .25s ease, border-color .25s ease;
+    }
+
+    .work-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(199,255,69,.5);
+    }
+
+    .portfolio-image {
+      display: block;
+      background: #080908;
+      aspect-ratio: 4/5;
+      overflow: hidden;
+    }
+
+    .portfolio-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transition: transform .35s ease;
+    }
+
+    .work-card:hover .portfolio-image img {
+      transform: scale(1.025);
+    }
+
+    .wide-work .portfolio-image { aspect-ratio: 3/1; }
+
+    .work-meta {
+      padding: 17px 18px 19px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .work-meta h3 {
+      margin: 0;
+      font-size: 14px;
+      letter-spacing: -.02em;
+    }
+
+    .work-meta p {
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .arrow { color: var(--lime); font-size: 20px; }
+
+    .note {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .services {
+      background: #101310;
+      border-block: 1px solid var(--line);
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 13px;
+    }
+
+    .service {
+      padding: 24px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 15px;
+    }
+
+    .service-num {
+      color: var(--lime);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .15em;
+    }
+
+    .service h3 {
+      margin: 22px 0 8px;
+      font-size: 19px;
+      letter-spacing: -.04em;
+    }
+
+    .service p { margin: 0; color: var(--muted); font-size: 13px; }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .about-card {
+      padding: 30px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: linear-gradient(145deg,#191d18,#101210);
+      min-height: 260px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .about-monogram {
+      font-size: 90px;
+      line-height: 1;
+      font-weight: 1000;
+      letter-spacing: -.1em;
+      color: var(--lime);
+    }
+
+    .about-card p { margin: 24px 0 0; color: var(--muted); font-size: 13px; }
+    .about-copy p { color: var(--muted); font-size: 15px; }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 22px;
+    }
+
+    .pill {
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: #dce1d8;
+      font-size: 11px;
+    }
+
+    .contact { padding-bottom: 88px; }
+
+    .contact-box {
+      padding: clamp(28px,5vw,58px);
+      border-radius: 22px;
+      background: var(--lime);
+      color: #11150b;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 28px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .contact-box:after {
+      content: "RE";
+      position: absolute;
+      right: 12%;
+      top: -50%;
+      font-size: clamp(130px,25vw,300px);
+      font-weight: 1000;
+      letter-spacing: -.12em;
+      color: rgba(17,21,11,.06);
+      pointer-events: none;
+    }
+
+    .contact-box h2 { max-width: 650px; position: relative; z-index: 1; }
+
+    .contact-box p {
+      max-width: 490px;
+      color: rgba(17,21,11,.72);
+      font-size: 14px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      min-width: 180px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-actions .button { background: #11150b; color: #f4f6f1; }
+
+    .contact-actions .button.secondary {
+      border-color: rgba(17,21,11,.3);
+      color: #11150b;
+      background: transparent;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 24px 0;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links { display: flex; gap: 17px; }
+    .footer-links a:hover { color: var(--lime); }
+
+    @media (max-width: 800px) {
+      .navlinks { gap: 14px; }
+      .navlinks a:not(.nav-cta) { display: none; }
+      .hero { padding-top: 65px; }
+      .work-grid { grid-template-columns: repeat(2,1fr); }
+      .service-grid { grid-template-columns: repeat(2,1fr); }
+      .about-grid { grid-template-columns: 1fr; gap: 25px; }
+      .about-card { min-height: 210px; }
+      .contact-box { align-items: flex-start; flex-direction: column; }
+      .contact-actions { flex-direction: row; flex-wrap: wrap; }
+    }
+
     @media (max-width: 520px) {
-      .wrap { width:min(var(--max),calc(100% - 28px)); }
-      nav { min-height:67px; }
-      .brand-name { font-size:15px; }
-      .nav-cta { padding:10px 13px; font-size:11px; }
-      .hero { padding:55px 0 48px; }
-      .hero-bottom { margin-top:48px; }
-      section { padding:55px 0; }
-      .section-head { display:block; }
-      .section-intro { margin-top:14px; }
-      .work-grid { grid-template-columns:1fr; }
+      .wrap { width: min(var(--max),calc(100% - 28px)); }
+      nav { min-height: 67px; }
+      .brand-name { font-size: 15px; }
+      .nav-cta { padding: 10px 13px; font-size: 11px; }
+      .hero { padding: 55px 0 48px; }
+      .hero-bottom { margin-top: 48px; }
+      section { padding: 55px 0; }
+      .section-head { display: block; }
+      .section-intro { margin-top: 14px; }
+      .work-grid { grid-template-columns: 1fr; }
       .wide-work .portfolio-image { aspect-ratio: 3/1; }
-      .art { min-height:275px; }
-      .service-grid { grid-template-columns:1fr; }
-      .service { padding:21px; }
-      .contact-actions { flex-direction:column; width:100%; }
-      .contact-actions .button { width:100%; }
+      .service-grid { grid-template-columns: 1fr; }
+      .service { padding: 21px; }
+      .contact-actions { flex-direction: column; width: 100%; }
+      .contact-actions .button { width: 100%; }
     }
   </style>
 </head>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-<style>
-  body {
-    font-family: 'Inter', sans-serif;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Space Grotesk', sans-serif;
-  }
-</style>
 <body>
   <header class="topbar">
     <nav class="wrap" aria-label="Main navigation">
@@ -186,16 +527,101 @@
     <section id="work">
       <div class="wrap">
         <div class="section-head">
-          <div><div class="kicker">Selected work</div><h2>Designs that do the talking.</h2></div>
+          <div>
+            <div class="kicker">Selected work</div>
+            <h2>Designs that do the talking.</h2>
+          </div>
           <p class="section-intro">Selected promotional graphics and real-estate campaign designs created for business communication and property marketing.</p>
         </div>
+
         <div class="work-grid real-work-grid">
-          <article class="work-card"><a class="portfolio-image" href="assets/bulkwealth-make-your-move.jpg" target="_blank" rel="noopener"><img src="assets/bulkwealth-make-your-move.jpg" alt="BulkWealth Make Your Move This Month real estate promotional flyer" loading="lazy"></a><div class="work-meta"><div><h3>Make Your Move This Month</h3><p>Real estate promotional flyer</p></div><span class="arrow">↗</span></div></article>
-          <article class="work-card"><a class="portfolio-image" href="assets/rahama-estate.jpg" target="_blank" rel="noopener"><img src="assets/rahama-estate.jpg" alt="Rahama Estate property marketing flyer" loading="lazy"></a><div class="work-meta"><div><h3>Rahama Estate</h3><p>Property marketing campaign</p></div><span class="arrow">↗</span></div></article>
-          <article class="work-card"><a class="portfolio-image" href="assets/al-kalam-housing-estate.jpg" target="_blank" rel="noopener"><img src="assets/al-kalam-housing-estate.jpg" alt="Al-Kalam Housing Estate land sales flyer" loading="lazy"></a><div class="work-meta"><div><h3>Al-Kalam Housing Estate</h3><p>Land sales flyer design</p></div><span class="arrow">↗</span></div></article>
-          <article class="work-card"><a class="portfolio-image" href="assets/trusted-brand-property-ad.jpg" target="_blank" rel="noopener"><img src="assets/trusted-brand-property-ad.jpg" alt="Trusted Brand property services advertisement" loading="lazy"></a><div class="work-meta"><div><h3>Trusted Brand</h3><p>Property services advertisement</p></div><span class="arrow">↗</span></div></article>
-          <article class="work-card wide-work"><a class="portfolio-image" href="assets/bulkwealth-property-banner.jpg" target="_blank" rel="noopener"><img src="assets/bulkwealth-property-banner.jpg" alt="BulkWealth wide property services banner design" loading="lazy"></a><div class="work-meta"><div><h3>BulkWealth Property Banner</h3><p>Wide-format banner design</p></div><span class="arrow">↗</span></div></article>
+
+          <!-- Original portfolio designs -->
+          <article class="work-card">
+            <a class="portfolio-image" href="assets/bulkwealth-make-your-move.jpg" target="_blank" rel="noopener">
+              <img src="assets/bulkwealth-make-your-move.jpg" alt="BulkWealth Make Your Move This Month real estate promotional flyer" loading="lazy">
+            </a>
+            <div class="work-meta">
+              <div><h3>Make Your Move This Month</h3><p>Real estate promotional flyer</p></div>
+              <span class="arrow">↗</span>
+            </div>
+          </article>
+
+          <article class="work-card">
+            <a class="portfolio-image" href="assets/rahama-estate.jpg" target="_blank" rel="noopener">
+              <img src="assets/rahama-estate.jpg" alt="Rahama Estate property marketing flyer" loading="lazy">
+            </a>
+            <div class="work-meta">
+              <div><h3>Rahama Estate</h3><p>Property marketing campaign</p></div>
+              <span class="arrow">↗</span>
+            </div>
+          </article>
+
+          <article class="work-card">
+            <a class="portfolio-image" href="assets/al-kalam-housing-estate.jpg" target="_blank" rel="noopener">
+              <img src="assets/al-kalam-housing-estate.jpg" alt="Al-Kalam Housing Estate land sales flyer" loading="lazy">
+            </a>
+            <div class="work-meta">
+              <div><h3>Al-Kalam Housing Estate</h3><p>Land sales flyer design</p></div>
+              <span class="arrow">↗</span>
+            </div>
+          </article>
+
+          <article class="work-card">
+            <a class="portfolio-image" href="assets/trusted-brand-property-ad.jpg" target="_blank" rel="noopener">
+              <img src="assets/trusted-brand-property-ad.jpg" alt="Trusted Brand property services advertisement" loading="lazy">
+            </a>
+            <div class="work-meta">
+              <div><h3>Trusted Brand</h3><p>Property services advertisement</p></div>
+              <span class="arrow">↗</span>
+            </div>
+          </article>
+
+          <article class="work-card wide-work">
+            <a class="portfolio-image" href="assets/bulkwealth-property-banner.jpg" target="_blank" rel="noopener">
+              <img src="assets/bulkwealth-property-banner.jpg" alt="BulkWealth wide property services banner design" loading="lazy">
+            </a>
+            <div class="work-meta">
+              <div><h3>BulkWealth Property Banner</h3><p>Wide-format banner design</p></div>
+              <span class="arrow">↗</span>
+            </div>
+          </article>
+
+          <!-- New portfolio design 1 -->
+          <article class="work-card">
+            <a class="portfolio-image" href="assets/ayawira-wednesday.jpg" target="_blank" rel="noopener">
+              <img src="assets/ayawira-wednesday.jpg" alt="Ayawira Wednesday graphic design" loading="lazy">
+            </a>
+            <div class="work-meta">
+              <div><h3>Ayawira Wednesday</h3><p>Promotional graphic design</p></div>
+              <span class="arrow">↗</span>
+            </div>
+          </article>
+
+          <!-- New portfolio design 2 -->
+          <article class="work-card">
+            <a class="portfolio-image" href="assets/bulkwealth-mothers-day.jpg" target="_blank" rel="noopener">
+              <img src="assets/bulkwealth-mothers-day.jpg" alt="BulkWealth Mother's Day design" loading="lazy">
+            </a>
+            <div class="work-meta">
+              <div><h3>BulkWealth Mother's Day</h3><p>Seasonal promotional design</p></div>
+              <span class="arrow">↗</span>
+            </div>
+          </article>
+
+          <!-- New portfolio design 3 -->
+          <article class="work-card">
+            <a class="portfolio-image" href="assets/ebere-birthday.jpg" target="_blank" rel="noopener">
+              <img src="assets/ebere-birthday.jpg" alt="Ebere birthday graphic design" loading="lazy">
+            </a>
+            <div class="work-meta">
+              <div><h3>Ebere Birthday</h3><p>Birthday design</p></div>
+              <span class="arrow">↗</span>
+            </div>
+          </article>
+
         </div>
+
         <p class="note">Tip: tap any project image to open a larger view.</p>
       </div>
     </section>
@@ -228,36 +654,4 @@
           <h2>Good design is more than looking good.</h2>
           <p>At Rols Enterprise, the goal is to turn ideas into visuals that are clear, memorable, and fit for purpose. From promotional graphics to brand identity and print design, each project should help tell a story and make the right impression.</p>
           <p>This portfolio is a growing collection of creative work. Add a short personal introduction here, your experience, and the design tools you use so potential clients can get to know you.</p>
-          <div class="pill-list"><span class="pill">Visual communication</span><span class="pill">Creative direction</span><span class="pill">Brand consistency</span><span class="pill">Print & digital</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact" id="contact">
-      <div class="wrap">
-        <div class="contact-box">
-          <div>
-            <div class="kicker" style="color:#263313">Have a project in mind?</div>
-            <h2>Let's create something people remember.</h2>
-            <p>Tell us what you're working on, what you need designed, and when you need it. We'll get back to you to discuss the next steps.</p>
-          </div>
-          <div class="contact-actions">
-            <a class="button" href="https://wa.me/2347045151249" target="_blank" rel="noopener">Chat on WhatsApp ↗</a>
-            <a class="button secondary" href="https://www.instagram.com/rols_enterprise/" target="_blank" rel="noopener">Instagram ↗</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="wrap footer-inner">
-      <span>© <span id="year"></span> Rols Enterprise. Designed with purpose.</span>
-      <div class="footer-links"><a href="#home">Back to top ↑</a><a href="https://www.instagram.com/rols_enterprise/" target="_blank" rel="noopener">Instagram</a></div>
-    </div>
-  </footer>
-  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
-</body>
-                                                                                                                                                        </html>
-                                                                                                                                                        
-                                                                                                                             
+          <div class="pill-list"><span class="pill">Visual communication</span><span class="pill"
